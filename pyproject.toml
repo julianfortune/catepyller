@@ -1,0 +1,27 @@
+[project]
+name = "catepyller"
+description = "My package description"
+authors = [
+    {name = "Julian Fortune"}
+]
+dependencies = []
+requires-python = ">=3.8"
+
+version = "0.0.1"
+
+[project.optional-dependencies]
+# Development dependencies
+dev = [
+    'black',
+    'isort',
+]
+test = [
+    'pytest',
+]
+
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.isort]
+profile = "black"
