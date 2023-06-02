@@ -1,8 +1,23 @@
 {
 	"name": "Python 3",
-	"image": "mcr.microsoft.com/devcontainers/python:0-3.10",
-	"features": {
-		"ghcr.io/devcontainers-contrib/features/poetry:2": {}
+	"build": {
+		"dockerfile": "Dockerfile"
 	},
-	"postCreateCommand": "poetry completions bash >> ~/.bash_completion"
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"ms-python.isort",
+				"ms-python.mypy-type-checker",
+				"matangover.mypy",
+				"njpwerner.autodocstring",
+				"bungcip.better-toml"
+			],
+			"settings": {
+				"python`.defaultInterpreterPath": "/usr/local/bin/python"
+			}
+		}
+	},
+	"postCreateCommand": "poetry lock; poetry install"
 }
